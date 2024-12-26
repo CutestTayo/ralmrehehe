@@ -28,8 +28,8 @@ local player = game:GetService("Players").LocalPlayer
 
 
 local numericalAttributes = {
-    Att_Conservation = 10,
-    Att_Dexterity = 15,
+    Att_Conservation = 7,
+    Att_Dexterity = 7,
     Att_Efficiency = 15,
     Att_Fortitude = 5,
     Att_Strength = 5
