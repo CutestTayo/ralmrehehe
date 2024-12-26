@@ -58,7 +58,7 @@ local booleanAttributes = {
     "Runnint_out", "Martial_prowess", "Hunter", "Speedster", "Rescuer", 
     "Adventurer", "Threat_assessment", "Flare_expert", "Battle_scarred", 
     "Will_to_help", "Tempo_master", "Guardian_angel", "Doctorate", 
-    "Disappearing_act"
+    "Disappearing_act", "Keep_it_going"
 }
 
 for _, attributeName in ipairs(booleanAttributes) do
