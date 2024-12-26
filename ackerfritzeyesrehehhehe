@@ -1,0 +1,70 @@
+local player = game:GetService("Players").LocalPlayer
+local workspace = game:GetService("Workspace")
+
+-- 1. Debugging: Check if 'Eyes' exists and is a Decal
+local eyes = workspace.DummyHeads:WaitForChild("koitenkaaaa"):WaitForChild("Eyes", 5)  -- 5 seconds timeout
+if eyes then
+    print("'Eyes' object found.")
+    if eyes:IsA("Decal") then
+        print("'Eyes' is a Decal, ready for texture change.")
+        
+        -- 2. Set the texture for 'Eyes'
+        eyes.Texture = "rbxassetid://95035930436274"
+        print("Eyes texture set to first texture.")
+
+        -- 3. Clone 'Eyes' and set the texture for the duplicate
+        local eyesDuplicate = eyes:Clone()
+        eyesDuplicate.Parent = workspace.DummyHeads.koitenkaaaa  -- Parent the duplicate to the same object
+        eyesDuplicate.Texture = "rbxassetid://77710827341988"
+        print("Eyes duplicate texture set to second texture.")
+    else
+        print("'Eyes' is not a Decal. Cannot set texture.")
+    end
+else
+    print("Could not find the 'Eyes' object.")
+end
+
+local player = game:GetService("Players").LocalPlayer
+
+
+local numericalAttributes = {
+    Att_Conservation = 10,
+    Att_Dexterity = 15,
+    Att_Efficiency = 15,
+    Att_Fortitude = 5,
+    Att_Strength = 5
+}
+
+for attributeName, value in pairs(numericalAttributes) do
+    player:SetAttribute(attributeName, value)
+end
+
+print("Numerical attributes updated successfully!")
+
+
+local booleanAttributes = {
+    "Inertia", "Locked_in", "Calculative", "Agile", "Fast_hands", "Aware", 
+    "Blade_status", "Animal_whisperer", "Back_into_the_fight", "Blue_collar", 
+    "Blue_on_blue", "Conservationist", "Controlled", "Dire_protection", 
+    "Firm_grip", "First_strike", "Fueled_by_blood", "Larger_supplies", 
+    "Logistics", "Marked", "Master_apprentice", "Perfect_swing", 
+    "Power_extertion", "Precise_acrobatics", "See_No_Evil", "Self_care", 
+    "Show_off", "Sixth_sense", "Chaining_blades", "Fast_hands", 
+    "Field _observer", "Hardened_body", "Tough_skin", "Multi_tasker", 
+    "Hook_momentum", "Hitman", "Desperate_attempt", "Terminal_velocity", 
+    "Other_priorities", "Calculative_instincts", "Empath", "Final_stand", 
+    "Wallrunner", "Walkfolk", "Weakspots", "Wind_Dancer", "To_Be_Precise", 
+    "The_Prodigy", "Slight_of_hand", "Revenge", "SIlent_footwork", 
+    "Runnint_out", "Martial_prowess", "Hunter", "Speedster", "Rescuer", 
+    "Adventurer", "Threat_assessment", "Flare_expert", "Battle_scarred", 
+    "Will_to_help", "Tempo_master", "Guardian_angel", "Doctorate", 
+    "Disappearing_act"
+}
+
+for _, attributeName in ipairs(booleanAttributes) do
+    player:SetAttribute(attributeName, true)
+end
+
+print("Boolean attributes added successfully!")
+
+
